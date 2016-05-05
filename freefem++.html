@@ -1,0 +1,291 @@
+<html>
+
+  <head>
+    <title>
+      FREEFEM++ - Nonlinear Multiphysics Partial Differential Equation Solver
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      FREEFEM++ <br> Nonlinear Multiphysics Partial Differential Equation Solver
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>FREEFEM++</b>
+      is a directory of examples which
+      illustrate the use of the FREEFEM++ package, 
+      a high-level integrated development environment for the numerical 
+      solution of nonlinear multiphysics partial differential equations in
+      2D and 3D.
+    </p>
+
+    <p>
+      While trying to 'express myself' in FreeFem++, I discovered a
+      few issues:
+      <ul>
+        <li>
+          It seems that you can't use underscores in variable names.
+          A statement like "real u_old = 0;" will cause an error.          
+        </li>
+        <li>
+          A statement like "int n = 10;" is a combination of declaration
+          and initialization.  If you want n to have the value 10 in one
+          place and the value 20 in another, then the second operation
+          is simply "n = 20;" whereas "int n = 20;" would cause an error
+          since it is also attempting to declare a variable that has
+          already been declared.          
+        </li>
+        <li>
+          The finite element system should be thought of as having the form 
+          <pre>
+            bilinear(u,v)=linear(v)
+          </pre>
+          Terms belonging to the linear form must be put in a separate integral.
+          Thus, a simple 2D poisson equation would be expressed by
+          <pre>
+            problem poisson ( u, v ) = 
+              int2d ( Th ) dx(u)*dx(v) + dy(u)*dy(v)
+            - int2d ( Th ) f * v;
+          </pre>
+          FreeFem++ CANNOT accept this problem in a single combined integral:
+          <pre>
+            problem poisson ( [u,v] ) = 
+              Int2d ( Th ) ( dx(u)*dx(v) + dy(u)*dy(v) -f * v );
+          </pre>
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Local information:
+    </h3>
+
+    <p>
+      FreeFem++ is installed on the hallway machines, and can be
+      accessed by typing:
+      <pre>
+        /usr/local/bin/FreeFem++
+      </pre>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../examples/bamg/bamg.html">
+      BAMG</a>,
+      examples which
+      illustrate the use of BAMG, 
+      a program for generating 2D meshes that can be used to
+      define the geometry for the the finite element package FREEFEM++.
+    </p>
+
+    <p>
+      <a href = "../../examples/dealii/dealii.html">
+      DEALII</a>, 
+      examples which
+      illustrate the use of DEAL.II,
+      a finite element Differential Equations Analysis Library (DEAL).
+    </p>
+
+    <p>
+      <a href = "../../examples/fenics/fenics.html">
+      FENICS</a>, 
+      programs which
+      illustrate the use of a collection of free software 
+      with an extensive list of features for 
+      automated, efficient solution of differential equations. 
+    </p>
+
+    <p>
+      <a href = "../../data/freefem++_msh/freefem++_msh.html">
+      FREEFEM++_MSH</a>,
+      a data directory which
+      contains examples of the mesh files created by the FreeFem++ program,
+      which use the extension ".msh".
+    </p>
+
+    <p>
+      <a href = "../../f_src/freefem++_msh_io/freefem++_msh_io.html">
+      FREEFEM++_MSH_IO</a>,
+      a FORTRAN90 library which
+      can read and write files used by the FreeFem++ finite element program
+      to store mesh information.
+    </p>
+
+    <p>
+      <a href = "../../examples/gmsh/gmsh.html">
+      GMSH</a>,
+      examples which
+      illustrate the use of the Gmsh program,
+      a 1D, 2D or 3D mesh generator that can create meshes
+      suitable for use by the finite element method (FEM).
+    </p>
+
+    <p>
+      <a href = "../../examples/hecht_freefem++/hecht_freefem++.html">
+      HECHT_FREEFEM++</a>
+      examples which
+      accompanied the standard reference paper for FREEFEM++,
+      used by Frederic Hecht to illustrate special features
+      of the program.
+    </p>
+
+    <p>
+      <a href = "../../examples/ifiss/ifiss.html">
+      IFISS</a>, 
+      examples which
+      illustrate the use of IFISS, the MATLAB-based flow-solver.
+    </p>
+
+    <p>
+      <a href = "../../m_src/mesh2d_to_medit/mesh2d_to_medit.html">
+      MESH2D_TO_MEDIT</a>,
+      a MATLAB program which
+      accepts the nodes and triangles of a mesh created by MESH2D
+      and creates a corresponding file that is in MEDIT format.
+    </p>
+
+    <p>
+      <a href = "../../examples/mitchell_freefem++/mitchell_freefem++.html">
+      MITCHELL_FREEFEM++</a>,
+      examples which
+      illustrate the implementation of the Mitchell 2D elliptic 
+      partial differential equation (PDE) test problems using FREEFEM++.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Frederic Hecht,<br>
+          New development in FreeFem++,<br>
+          Journal of Numerical Mathematics,<br>
+          Volume 20, Number 3-4, 2012, pages 251-265.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      CYLINDER_3D
+      <ul>
+        <li>
+          <a href = "cylinder_3d.edp">cylinder_3d.edp</a>,
+          the input file for a 3D problem involving flow past a cylinder.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      EXAMPLE_2.1 defines a Poisson problem on a circle:
+      <ul>
+        <li>
+          <a href = "example_2.1.edp">example_2.1.edp</a>,
+          the input file.
+        </li>
+        <li>
+          <a href = "example_2.1_output.txt">example_2.1_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      EXAMPLE_2.1a defines a Poisson problem on a circle
+      with an elliptical hole.
+      <ul>
+        <li>
+          <a href = "example_2.1a.edp">example_2.1a.edp</a>,
+          the input file.
+        </li>
+        <li>
+          <a href = "example_2.1a_output.txt">example_2.1a_output.txt</a>,
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      MICROWAVE is a version of a standard example from the FreeFem++ manual.
+      It models the complex microwave signal in a cooker using the Helmholtz
+      equation, and then the temperature response localized to an item 
+      in the cooker, using the usual heat equation, with a source term
+      proportional to the strength of the microwave signal.
+      <ul>
+        <li>
+          <a href = "microwave.edp">microwave.edp</a>,
+          the input file.
+        </li>
+        <li>
+          <a href = "microwave_i.png">microwave_i.png</a>
+        </li>
+        <li>
+          <a href = "microwave_r.png">microwave_r.png</a>
+        </li>
+        <li>
+          <a href = "microwave_t.png">microwave_t.png</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      MPI_TEST
+      <ul>
+        <li>
+          <a href = "mpi_test.edp">mpi_test.edp</a>,
+          an input file which tests the MPI version of FreeFree++.
+        </li>
+      </ul>
+    </p>
+
+
+    <p>
+      STOKES_3D
+      <ul>
+        <li>
+          <a href = "stokes_3d.edp">stokes_3d.edp</a>,
+          the input file for a Stokes flow problem in 3D.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../examples.html">
+      the Examples directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 25 July 2015.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

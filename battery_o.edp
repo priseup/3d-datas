@@ -1,0 +1,36 @@
+//  Discussion:
+//
+//    This example plots the battery_o mesh.
+//
+//  Location:
+//
+//    http://people.sc.fsu.edu/~jburkardt/examples/bamg/battery_o.edp
+//
+//  Licensing:
+//
+//    This code is distributed under the GNU LGPL license.
+//
+//  Modified:
+//
+//    30 December 2014
+//
+//  Author:
+//
+//    John Burkardt
+//
+//  Reference:
+//
+//    Frederic Hecht,
+//    Freefem++,
+//    Third Edition, version 3.22
+//
+
+//
+//  Define Th, the triangulation.
+//
+mesh Th = readmesh ( "battery_o.msh" );
+//
+//  Plot the mesh.
+//
+plot ( Th, wait = 1, ps = "battery_o.eps" );
+

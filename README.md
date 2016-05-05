@@ -1,2 +1,8 @@
 # objdata
-.obj datas download be wget from http://people.sc.fsu.edu/~jburkardt/data/obj/obj.html
+.obj datas download by wget from http://people.sc.fsu.edu/~jburkardt/data/obj/obj.html
+the following format included:
+.obj
+.3ds
+.off
+.geo
+.msh

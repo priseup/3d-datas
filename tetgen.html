@@ -1,0 +1,445 @@
+<html>
+
+  <head>
+    <title>
+      TETGEN - A Quality Tetrahedral Mesh Generator and 3D Delaunay Triangulator
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      TETGEN <br> A Quality Tetrahedral Mesh Generator and 3D Delaunay Triangulator
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>TETGEN</b>
+      is a C++ program which
+      can create a 3D mesh of tetrahedrons, suitable for use in finite element
+      or finite volume calculations, with the mesh satisfying the 3D Delaunay
+      criterion.  The program is by Hang Si.
+    </p>
+
+    <p>
+      For a 3D point set, the program generates the Delaunay tetrahedralization
+      and the convex hull.
+    </p>
+
+    <p>
+      For a 3D domain, in which the user has defined boundaries, the program
+      can generate additional internal points, which are then organized into
+      a boundary-constrained conforming quality Delaunay mesh.
+    </p>
+
+    <p>
+      <b>tetgen</b> works with the following files:
+      <ul>
+        <li>
+          .node, (input/output), a list of nodes;
+        </li>
+        <li>
+          .poly, (input), a piecewise linear complex;
+        </li>
+        <li>
+          .smesh, (input/output), a simple piecewise linear complex;
+        </li>
+        <li>
+          .ele, (input/output), a list of tetrahedral elements;
+        </li>
+        <li>
+          .face, (input/output), a list of triangular faces;
+        </li>
+        <li>
+          .edge, (output), a list of boundary edges;
+        </li>
+        <li>
+          .vol, (input), a list of maximum volumes;
+        </li>
+        <li>
+          .var, (input), a list of variant constraints for facets or segments;
+        </li>
+        <li>
+          .neighb (output), a list of neighbors;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>tetgen</b> can read and write the following common polyhedral 
+      file formats:
+      <ul>
+        <li>
+          .mesh, (input/output), Medit's surface mesh file format;
+        </li>
+        <li>
+          .off, (input/output), the polyhedral file format for Geomview;
+        </li>
+        <li>
+          .ply, (input), a polyhedral file format;
+        </li>
+        <li>
+          .stl, (input), the stereolithography file format;
+        </li>
+      </ul>
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files described and made available on this
+      web page are distributed under the following
+      <a href = "license.txt">license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../examples/bamg/bamg.html">
+      BAMG</a>,
+      examples which
+      illustrate the use of BAMG, 
+      a program for generating 2D meshes that can be used to
+      define the geometry for the the finite element package FREEFEM++.
+    </p>
+
+    <p>
+      <a href = "../../m_src/dist_plot/dist_plot.html">
+      DIST_PLOT</a>,
+      a MATLAB program which
+      creates a color contour plot of the
+      distance functions that are used by DISTMESH.
+    </p>
+
+    <p>
+      <a href = "../../m_src/distmesh/distmesh.html">
+      DISTMESH</a>,
+      a MATLAB library which
+      creates meshes, for 2D or 3D data.
+    </p>
+
+    <p>
+      <a href = "../../m_src/distmesh_3d/distmesh_3d.html">
+      DISTMESH_3D</a>,
+      a MATLAB program which
+      is a subset of the DISTMESH routines, exclusively for 3D problems.
+    </p>
+
+    <p>
+      <a href = "../../examples/gmsh/gmsh.html">
+      GMSH</a>,
+      examples which
+      illustrate the use of the gmsh program,
+      a 3D mesh generator for the finite element method (FEM).
+    </p>
+
+    <p>
+      <a href = "../../data/mesh/mesh.html">
+      MESH</a>,
+      a data directory which
+      contains examples of MESH files, which can be used to define the geometry
+      of a finite element mesh in 2D or 3D, using triangles, quadrilaterals,
+      tetrahedrons or hexahedrons.  These files can be viewed by the medit 
+      graphics program.
+    </p>
+
+    <p>
+      <a href = "../../m_src/mesh2d/mesh2d.html">
+      MESH2D</a>,
+      a MATLAB library which
+      can automatically create a triangular mesh for a given polygonal region,
+      by Darren Engwirda.
+    </p>
+
+    <p>
+      <a href = "../../data/off/off.html">
+      OFF</a>,
+      a data directory which
+      contains examples of Object File Format (OFF) files,
+      a Geomview file format for 3D graphics;
+    </p>
+
+    <p>
+      <a href = "../../data/ply/ply.html">
+      PLY</a>,
+      a data directory which
+      contains examples of PLY files, a format for objects defined as a collection of
+      polygons, 3D graphics;
+    </p>
+
+    <p>
+      <a href = "../../data/poly_3d/poly_3d.html">
+      POLY_3D</a>,
+      a data directory which
+      contains examples of 3D POLY files, a 3D format used by
+      tetgen and tetview,
+      for a Piecewise Linear Complex.
+    </p>
+
+    <p>
+      <a href = "../../data/stla/stla.html">
+      STLA</a>,
+      a data directory which
+      contains examples of ASCII stereolithography (STL) files for 3D graphics;
+    </p>
+
+    <p>
+      <a href = "../../examples/tetview/tetview.html">
+      TETVIEW</a>,
+      examples of the use of TETVIEW which
+      can display the 3D meshes and tetrahedralizations created by TETGEN.
+    </p>
+
+    <h3 align = "center">
+      Author:
+    </h3>
+
+    <p>
+      Hang Si
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          G Miller, D Talmor, S-H Teng, N Walkington, H Wang,<br>
+          Control volume meshes using sphere packing: generation, 
+          refinement and coarsening,<br>
+          Proceedings of the Fifth International Meshing Roundtable,<br>
+          pages 47-61, 1996.
+        </li>
+        <li>
+          Hang Si,<br>
+          TetGen: A Quality Tetrahedral Mesh Generator and 3D Delaunay Trianulator,<br>
+          Version 1.4 User Manual,<br>
+          Weierstrass Institute for Applied Analysis and Stochastics (WIAS),<br>
+          16 January 2006.
+        </li>
+        <li>
+          Hang Si,<br>
+          TetGen, a Delaunay-based quality tetrahedral mesh generator,<br>
+          ACM Transactions on Mathematical Software,<br>
+          Volume 41, Number 2, January 2015, 36 pages.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <b>CUBE</b> starts with a "poly" file that describes a cube.
+      <ul>
+        <li>
+          <a href = "cube.poly">cube.poly</a>
+        </li>
+      </ul>
+      Then we give the command "tetgen -pq cube"
+      <ul>
+        <li>
+          <a href = "cube.1.ele">cube.1.ele</a>, the mesh elements.
+        </li>
+        <li>
+          <a href = "cube.1.face">cube.1.face</a>, the mesh faces.
+        </li>
+        <li>
+          <a href = "cube.1.node">cube.1.node</a>, the mesh nodes.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>ELLELL</b> starts with a "ply" file that describes a building with
+      L-shaped base and profile.
+      <ul>
+        <li>
+          <a href = "ellell.ply">ellell.ply</a>
+        </li>
+      </ul>
+      Then we give the quality mesh command "tetgen -pq ellell"
+      <ul>
+        <li>
+          <a href = "ellell.1.ele">ellell.1.ele</a>, the mesh elements.
+        </li>
+        <li>
+          <a href = "ellell.1.face">ellell.1.face</a>, the mesh faces.
+        </li>
+        <li>
+          <a href = "ellell.1.node">ellell.1.node</a>, the mesh nodes.
+        </li>
+        <li>
+          <a href = "ellell.1.png">ellell.1.png</a>, a mesh image from tetview.
+        </li>
+      </ul>
+      Then we give the refinement command "tetgen -ra0.1 ellell.1"
+      <ul>
+        <li>
+          <a href = "ellell.2.ele">ellell.2.ele</a>, the mesh elements.
+        </li>
+        <li>
+          <a href = "ellell.2.face">ellell.2.face</a>, the mesh faces.
+        </li>
+        <li>
+          <a href = "ellell.2.node">ellell.2.node</a>, the mesh nodes.
+        </li>
+        <li>
+          <a href = "ellell.2.png">ellell.2.png</a>, a mesh image from tetview.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>EXAMPLE</b> starts with just a "poly" file that describes a
+      compensated magic tee junction, with 54 nodes and 29 faces.
+      The poly file describes a piecewise linear complex (PLC).
+      <ul>
+        <li>
+          <a href = "example.poly">example.poly</a>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The command <b>tetgen -pg example</b> reads the PLC, and writes its
+      constrained Delaunay tetrahedralization to node, element and face files.
+      The additional "g" switch creates a ".mesh" file which can be used by
+      the MEDIT graphics program.
+      <ul>
+        <li>
+          <a href = "case1/example.poly">example.poly</a>
+        </li>
+        <li>
+          <a href = "case1/example.1.mesh">example.1.mesh</a>
+        </li>
+        <li>
+          <a href = "case1/example.1.png">example.1.png</a>,
+          a snapshot of the region taking while viewing the mesh file with Medit.
+        </li>
+        <li>
+          <a href = "case1/example.1.node">example.1.node</a>
+        </li>
+        <li>
+          <a href = "case1/example.1.ele">example.1.ele</a>
+        </li>
+        <li>
+          <a href = "case1/example.1.face">example.1.face</a>
+        </li>
+        <li>
+          <a href = "case1/example.1.output.txt">example.1.output.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The command <b>tetgen -pgq example</b> reads the PLC and creates a quality
+      mesh, with a quality ratio (circumradius to shortest edge) bounded by 2.0 
+      (the default).  The additional "g" switch creates a ".mesh" file which
+      can be used by the MEDIT graphics program.
+      <ul>
+        <li>
+          <a href = "case2/example.poly">example.poly</a>
+        </li>
+        <li>
+          <a href = "case2/example.1.mesh">example.1.mesh</a>
+        </li>
+        <li>
+          <a href = "case2/example.1.png">example.1.png</a>,
+          a snapshot of the region taking while viewing the mesh file with Medit.
+        </li>
+        <li>
+          <a href = "case2/example.1.node">example.1.node</a>
+        </li>
+        <li>
+          <a href = "case2/example.1.ele">example.1.ele</a>
+        </li>
+        <li>
+          <a href = "case2/example.1.face">example.1.face</a>
+        </li>
+        <li>
+          <a href = "case2/example.1.output.txt">example.1.output.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The command <b>tetgen -pgq1.414V example</b> forces the quality ratio 
+      to be bounded by 1.414.  The additional "g" switch creates a ".mesh" file 
+      which can be used by the MEDIT graphics program.
+      <ul>
+        <li>
+          <a href = "case3/example.poly">example.poly</a>
+        </li>
+        <li>
+          <a href = "case3/example.1.mesh">example.1.mesh</a>
+        </li>
+        <li>
+          <a href = "case3/example.1.png">example.1.png</a>,
+          a snapshot of the region taking while viewing the mesh file with Medit.
+        </li>
+        <li>
+          <a href = "case3/example.1.node">example.1.node</a>
+        </li>
+        <li>
+          <a href = "case3/example.1.ele">example.1.ele</a>
+        </li>
+        <li>
+          <a href = "case3/example.1.face">example.1.face</a>
+        </li>
+        <li>
+          <a href = "case3/example.1.output.txt">example.1.output.txt</a>, the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Creating a "node" file, the command <b>tetgen example</b> now simply computes
+      the Delaunay tetrahedralization and the convex hull of the given nodes.
+      <ul>
+        <li>
+          <a href = "case4/example.node">example.node</a>
+        </li>
+        <li>
+          <a href = "case4/example.1.node">example.1.node</a>
+        </li>
+        <li>
+          <a href = "case4/example.1.ele">example.1.ele</a>
+        </li>
+        <li>
+          <a href = "case4/example.1.face">example.1.face</a>
+        </li>
+        <li>
+          <a href = "case4/example.1.output.txt">example.1.output.txt</a>, 
+          the output file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../examples.html">
+      the Examples directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 04 June 2012.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+  <!-- Initial HTML skeleton created by HTMLINDEX. -->
+
+</html>

@@ -1,0 +1,347 @@
+<html>
+
+  <head>
+    <title>
+      GMSH: 3D Finite Element Method Mesh Generator
+    </title>
+  </head>
+
+  <body bgcolor="#EEEEEE" link="#CC0000" alink="#FF3300" vlink="#000055">
+
+    <h1 align = "center">
+      GMSH <br> 3D Finite Element Method Mesh Generator
+    </h1>
+
+    <hr>
+
+    <p>
+      <b>GMSH</b>: 
+      examples which
+      illustrate the use of the GMSH program,
+      a 1D, 2D or 3D mesh generator that can create meshes
+      suitable for use by the finite element method (FEM).
+    </p>
+
+    <p>
+      GMSH allows the user to work with a visual interface, or
+      with script files.  The examples given here
+      use the GMSH scripting language, specifying a "geo" geometry
+      file that GMSH processes to create an "msh" mesh file.
+    </p>
+
+    <p>
+      Meshes created by GMSH can be used by the FENICS or DOLFIN 
+      finite element programs after being converted to an XML format
+      using DOLFIN-CONVERT.
+    </p>
+
+    <p>
+      The meshes can be saved in any of the following formats:
+      <ul>
+        <li>
+          <b>.msh</b>: the native GMSH format;
+        </li>
+        <li>
+          <b>.inp</b>: Abaqus;
+        </li>
+        <li>
+          <b>.diff</b>: Diffpack;
+        </li>
+        <li>
+          <b>.unv</b>: I-deas Universal
+        </li>
+        <li>
+          <b>.ir3</b>: Iridum
+        </li>
+        <li>
+          <b>.med</b>: MED;
+        </li>
+        <li>
+          <b>.mesh</b>: INRIA Medit;
+        </li>
+        <li>
+          <b>.mail</b>: CEA triangulation;
+        </li>
+        <li>
+          <b>.bdf</b>: Nastran bulk data file;
+        </li>
+        <li>
+          <b>.p3d</b>: Plot3d structured mesh;
+        </li>
+        <li>
+          <b>.stl</b>: STL surface;
+        </li>
+        <li>
+          <b>.wrl</b>: VRML surface;
+        </li>
+        <li>
+          <b>.vtk</b>: Visual Toolkit;
+        </li>
+        <li>
+          <b>.ply2</b>: PLY2 surface;
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      The GMSH program is available from 
+      <a href = "http://geuz.org/gmsh/">
+                 http://geuz.org/gmsh/</a>.
+    </p>
+
+    <h3 align = "center">
+      Licensing:
+    </h3>
+
+    <p>
+      The computer code and data files made available on this web page
+      are distributed under
+      <a href = "../../txt/gnu_lgpl.txt">the GNU LGPL license.</a>
+    </p>
+
+    <h3 align = "center">
+      Related Data and Programs:
+    </h3>
+
+    <p>
+      <a href = "../../examples/bamg/bamg.html">
+      BAMG</a>,
+      examples which
+      illustrate the use of BAMG, 
+      a program for generating 2D meshes that can be used to
+      define the geometry for the the finite element package FREEFEM++.
+    </p>
+
+    <p>
+      <a href = "../../py_src/dolfin-convert/dolfin-convert.html">
+      DOLFIN-CONVERT</a>,
+      a Python program which
+      can convert mesh file from Gmsh, MEDIT, METIS or SCOTCH format to an
+      XML format suitable for use by DOLFIN or FENICS,
+      by Anders Logg.
+    </p>
+
+    <p>
+      <a href = "../../c_src/fem_to_gmsh/fem_to_gmsh.html">
+      FEM_TO_GMSH</a>,
+      a C program which
+      reads FEM files definining a 1D, 2D or 3D mesh, namely
+      a file of node coordinates and a file of elements defined by
+      node indices, and creates a Gmsh mesh file.
+    </p>
+
+    <p>
+      <a href = "../../examples/fenics/fenics.html">
+      FENICS</a>, 
+      programs which
+      illustrate the use of a collection of free software 
+      with an extensive list of features for 
+      automated, efficient solution of differential equations. 
+    </p>
+
+    <p>
+      <a href = "../../f_src/gmsh_to_fem/gmsh_to_fem.html">
+      GMSH_TO_FEM</a>,
+      a FORTRAN90 program which
+      reads a mesh data file created by the GMSH program
+      and writes a pair of node and element files that correspond
+      to the FEM format.
+    </p>
+
+    <p>
+      <a href = "../../examples/meshlab/meshlab.html">
+      MESHLAB</a>,
+      examples which
+      illustrate the use of the meshlab program, 
+      an advanced mesh processing system for automatic or user-assisted
+      editing, cleaning, filtering, converting and rendering of large
+      unstructured 3D triangular meshes.  MESHLAB can read and write
+      3DS, OBJ, OFF, PLY, and STL graphics files.
+    </p>
+
+    <p>
+      <a href = "../../data/msh/msh.html">
+      MSH</a>,
+      a data directory of examples of MSH files,
+      the native 3D mesh format used by gmsh.
+    </p>
+
+    <p>
+      <a href = "../../examples/tetgen/tetgen.html">
+      TETGEN</a>,
+      examples of the use of TETGEN,
+      a program which can compute the convex hull and 
+      Delaunay tetrahedralization of a set of 3D points, or can start 
+      with a 3D region defined by its boundaries, and construct a 
+      boundary-constrained conforming quality Delaunay mesh,
+      by Hang Si.
+    </p>
+
+    <p>
+      <a href = "../../examples/tethex/tethex.html">
+      TETHEX</a>,
+      examples which
+      illustrate the use of TETHEX,
+      a C++ program which
+      can read a Gmsh file defining a mesh of triangles or tetrahedrons,
+      and subdivide the mesh into quadrilaterals or hexahedrons, which
+      are suitable for use by the DEALII finite element program,
+      by Mikhail Artemiev.
+    </p>
+
+    <h3 align = "center">
+      Reference:
+    </h3>
+
+    <p>
+      <ol>
+        <li>
+          Christophe Geuzaine, Jean-Francois Remacle,<br>
+          Gmsh: a three-dimensional finite element mesh generator with
+          built-in pre- and post-processing facilities,<br>
+          International Journal for Numerical Methods in Engineering,<br>
+          Volume 79, Number 11, pages 1309-1331, 2009.
+        </li>
+      </ol>
+    </p>
+
+    <h3 align = "center">
+      Examples and Tests:
+    </h3>
+
+    <p>
+      <b>AIRFOIL_EXTERIOR</b> is a 2D region that models the outer surface of an
+      airfoil in a rectangular box.
+      <ul>
+        <li>
+          <a href = "airfoil_exterior.geo">airfoil_exterior.geo</a>, 
+          the GMSH geometry file.
+        </li>
+        <li>
+          <a href = "airfoil_exterior_boundary.png">airfoil_exterior_boundary.png</a>, 
+          an image of the boundary of the region.
+        </li>
+        <li>
+          <a href = "airfoil_exterior.msh">airfoil_exterior.msh</a>, 
+          the GMSH mesh file.
+        </li>
+        <li>
+          <a href = "airfoil_exterior_mesh.png">airfoil_exterior_mesh.png</a>, 
+          an image of the mesh.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>AIRFOIL_INTERIOR</b> is a 2D region that models the inner volume of an
+      airfoil.
+      <ul>
+        <li>
+          <a href = "airfoil_interior.geo">airfoil_interior.geo</a>, 
+          the GMSH geometry file.
+        </li>
+        <li>
+          <a href = "airfoil_interior_boundary.png">airfoil_interior_boundary.png</a>, 
+          an image of the boundary of the region.
+        </li>
+        <li>
+          <a href = "airfoil_interior.msh">airfoil_interior.msh</a>, 
+          the GMSH mesh file.
+        </li>
+        <li>
+          <a href = "airfoil_interior_mesh.png">airfoil_interior_mesh.png</a>, 
+          an image of the mesh.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>CHEBY9</b> is a 1D region, extending over [-1,+1],
+      using 9 Chebyshev points.
+      <ul>
+        <li>
+          <a href = "cheby9.geo">test.geo</a>, 
+          the GMSH geometry file.
+        </li>
+        <li>
+          <a href = "cheby9.msh">test.msh</a>, 
+          the GMSH mesh file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>PINCH</b> is a 2D channel formed by starting with a long rectangular
+      channel and creating a narrow neck by removing elliptical portions
+      from the top and bottom.  The resulting mesh has 4,325 nodes and
+      8,656 elements.
+      <ul>
+        <li>
+          <a href = "pinch.geo">pinch.geo</a>, 
+          the GMSH geometry file that defines the region.
+        </li>
+        <li>
+          <a href = "pinch.msh">pinch.msh</a>, 
+          the GMSH mesh file created from the geometry file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>TEST02</b> is an upside-down 2D L-shaped region, using 124 vertices
+      and 206 cells, for the Mitchell test problem #2.
+      <ul>
+        <li>
+          <a href = "test02.geo">test02.geo</a>, 
+          the GMSH geometry file that defines the region.
+        </li>
+        <li>
+          <a href = "test02.msh">test02.msh</a>, 
+          the GMSH mesh file created from the geometry file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>TEST03</b> is the square [-1,+1]x[-1,+1] with a slit from (0,0)
+      to (1,0), for the Mitchell test problem #3.
+      <ul>
+        <li>
+          <a href = "test03.geo">test03.geo</a>, 
+          the GMSH geometry file that defines the region.
+        </li>
+        <li>
+          <a href = "test03.msh">test03.msh</a>, 
+          the GMSH mesh file created from the geometry file.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      <b>TEST05</b> is the 2D battery problem, with internal contstraint lines, 
+      for the Mitchell test problem #5.  GMSH fails when I try to mesh this
+      region!
+      <ul>
+        <li>
+          <a href = "test05.geo">test05.geo</a>, 
+          the GMSH geometry file that defines the region.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      You can go up one level to <a href = "../examples.html">
+      the EXAMPLES directory</a>.
+    </p>
+
+    <hr>
+
+    <i>
+      Last revised on 16 October 2014.
+    </i>
+
+    <!-- John Burkardt -->
+
+  </body>
+
+</html>
